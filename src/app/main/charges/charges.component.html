@@ -1,0 +1,15 @@
+<header class="tabHeader">
+    <h4 style="margin: 10px;">Add New Charge</h4>
+    <button mat-icon-button  aria-label="Icon button with a Add icon" type="submit" (click)="addNewRow()">
+        <mat-icon style="color: whitesmoke;">add_circle_outline</mat-icon>
+    </button>
+</header>
+<ag-grid-angular 
+    #agGrid
+    style="width: 96%; height: 350px;" 
+    class="ag-theme-alpine"
+    [rowData]="rowData" 
+    [columnDefs]="columnDefs"
+    [frameworkComponents]="frameworkComponents"
+    >
+</ag-grid-angular>

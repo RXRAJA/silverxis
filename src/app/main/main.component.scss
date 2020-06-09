@@ -1,0 +1,27 @@
+.tab-container{
+    margin-left: 3rem;
+}
+
+::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active{
+    min-width: 0!important;
+}
+
+.select-row_span{
+    margin: 0 4rem 0 3rem;
+}
+
+.select-row_btn{
+    margin-left: 1rem;
+}
+
+.save_btn{
+    float: right;
+    margin-right: 4%;
+}
+
+.mainHeading{
+    color: #0063b2;
+    text-decoration: underline;
+    font-weight: 800;
+    margin: .25%;
+}

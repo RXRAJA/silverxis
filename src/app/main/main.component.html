@@ -1,0 +1,62 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <h1>SilverXis</h1>
+    </mat-toolbar-row>
+    <!-- <mat-toolbar-row>
+        <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
+    </mat-toolbar-row> -->
+</mat-toolbar>
+<div class='select-row'>
+    <form [formGroup]='attributesForm'>
+        <span class="select-row_span">
+            <mat-form-field>
+                <mat-label>Actions</mat-label>
+                <mat-select #actions formControlName = 'actions'>
+                    <!-- <mat-option value="" selected disabled>--Select Action--</mat-option> -->
+                    <mat-option *ngFor = 'let action of actionArr' value="{{action}}">{{action}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-icon-button color="primary">
+                <mat-icon>add_box</mat-icon>
+            </button>
+        </span>
+        <span class="select-row_span"
+        *ngIf='actions.value'
+        >
+            <mat-form-field>
+                <mat-label> Action Attributes</mat-label>
+                <mat-select formControlName = 'actionAttributes' multiple #actionAttributes>
+                  <mat-select-trigger>
+                    {{actionAttributes.value ? actionAttributes.value[0] : ''}}
+                    <span *ngIf="actionAttributes.value?.length > 1" class="example-additional-selection">
+                      (+{{actionAttributes.value.length - 1}} {{actionAttributes.value?.length === 2 ? 'other' : 'others'}})
+                    </span>
+                  </mat-select-trigger>
+                  <mat-option *ngFor="let actionAttribute of actionAttributesArr" [value]="actionAttribute">{{actionAttribute}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-icon-button color="primary" >
+                <mat-icon>add_box</mat-icon>
+            </button>
+            <button mat-flat-button color="primary" class='select-row_btn' (click)='loadTabs(actionAttributes)'>Add</button>
+        </span>
+    </form>
+</div>
+<div class="tab-container"  *ngIf='tabContainerShow'>
+    <h2 class='mainHeading'>{{this.attributesForm.value.actions}}</h2>
+    <mat-tab-group mat-align-tabs="start">
+        <mat-tab label="Charges" *ngIf = 'tabsObj.Charges'><app-charges></app-charges></mat-tab>
+        <mat-tab label="Directions" *ngIf = 'tabsObj.Directions'><app-directions></app-directions></mat-tab>
+        <mat-tab label="Equipment List" *ngIf = 'tabsObj.Equipment'><app-equipment-list></app-equipment-list></mat-tab>
+        <mat-tab label="Exclusions" *ngIf = 'tabsObj.Exclusions'><app-exclusions></app-exclusions></mat-tab>
+        <mat-tab label="Expertise" *ngIf = 'tabsObj.Expertise'><app-expertise></app-expertise></mat-tab>
+        <mat-tab label="Material List" *ngIf = 'tabsObj["Material List"]'><app-material-list></app-material-list></mat-tab>
+        <mat-tab label="Measurements" *ngIf = 'tabsObj.Measurements'><app-measurements></app-measurements></mat-tab>
+        <mat-tab label="Publications/CMM" *ngIf = 'tabsObj.Publications'><app-publications></app-publications></mat-tab>
+    </mat-tab-group>
+    <div>
+        <button mat-flat-button color="primary" class='save_btn' (click) = 'saveData()'>Save Workflow Details</button>
+    </div>
+</div>
+  
+<router-outlet></router-outlet>

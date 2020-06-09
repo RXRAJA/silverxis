@@ -1,0 +1,177 @@
+<header class="tabHeader">
+    <h4 style="margin: 10px;">Publications/CMM</h4>
+</header>
+<div class="formDiv">
+    <form [formGroup] = 'publicationsForm' (ngSubmit) = "onSubmit(publicationsForm.value)" width='100%' class="formClass">
+        <div class="formDiv1">
+            <mat-form-field>
+                <mat-label>Entry Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName = 'entryDate'>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <br>
+            <mat-form-field >
+                <mat-label>Action</mat-label>
+                <input matInput formControlName = 'action' placeholder="Action Name">
+                </mat-form-field>
+                <br>
+            <mat-form-field >
+                <mat-label>Publication ID</mat-label>
+                <input matInput formControlName = 'publicationId' placeholder="Publication ID">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Publication Description</mat-label>
+                <textarea matInput formControlName = 'publicationDescription' placeholder="Publication Description"></textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field >
+                <mat-label>Publication Type</mat-label>
+                <input matInput formControlName = 'publicationType' placeholder="Publication Type">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Author</mat-label>
+                <mat-select formControlName = 'author' placeholder="Author">
+                    <mat-option value="" selected disabled>--Select--</mat-option>
+                    <mat-option value="Author 1">Author 1</mat-option>
+                    <mat-option value="Author 2">Author 2</mat-option>
+                    <mat-option value="Author 3">Author 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Published By</mat-label>
+                <mat-select formControlName = 'publishedBy' placeholder="Published By">
+                    <mat-option value="" selected disabled>--Select--</mat-option>
+                    <mat-option value="Published By 1">Published By 1</mat-option>
+                    <mat-option value="Published By 2">Published By 2</mat-option>
+                    <mat-option value="Published By 3">Published By 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Aircraft Manufacturer</mat-label>
+                <mat-select formControlName = 'aircraftManufacturer' placeholder="Aircraft Manufacturer">
+                    <mat-option value="" selected disabled>--Select--</mat-option>
+                    <mat-option value="Aircraft Manufacturer 1">Aircraft Manufacturer 1</mat-option>
+                    <mat-option value="Aircraft Manufacturer 2">Aircraft Manufacturer 2</mat-option>
+                    <mat-option value="Aircraft Manufacturer 3">Aircraft Manufacturer 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Model</mat-label>
+                <mat-select formControlName = 'model' placeholder="Model">
+                    <mat-option value="" selected disabled>--Select--</mat-option>
+                    <mat-option value="Model 1">Model 1</mat-option>
+                    <mat-option value="Model 2">Model 2</mat-option>
+                    <mat-option value="Model 2">Model 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>ATA-Chapter</mat-label>
+                <mat-select formControlName = 'ataChapter' placeholder="ATA-Chapter">
+                    <mat-option value="" selected disabled>--Select--</mat-option>
+                    <mat-option value="ATA-Chapter 1">ATA-Chapter 1</mat-option>
+                    <mat-option value="ATA-Chapter 2">ATA-Chapter 2</mat-option>
+                    <mat-option value="ATA-Chapter 2">ATA-Chapter 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>ATA-Sub Chapter</mat-label>
+                <mat-select formControlName = 'ataSubChapter' placeholder="ATA-Sub Chapter">
+                    <mat-option value="" selected disabled>--Select--</mat-option>
+                    <mat-option value="ATA-Sub Chapter 1">ATA-Sub Chapter 1</mat-option>
+                    <mat-option value="ATA-Sub Chapter 2">ATA-Sub Chapter 2</mat-option>
+                    <mat-option value="ATA-Sub Chapter 2">ATA-Sub Chapter 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>ATA-Position/Zone</mat-label>
+                <mat-select formControlName = 'ataPosition' placeholder="ATA-Position">
+                    <mat-option value="" selected disabled>--Select--</mat-option>
+                    <mat-option value="ATA-Position 1">ATA-Position 1</mat-option>
+                    <mat-option value="ATA-Position 2">ATA-Position 2</mat-option>
+                    <mat-option value="ATA-Position 2">ATA-Position 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Location</mat-label>
+                <mat-select formControlName = 'location' placeholder="Location">
+                    <mat-option value="" selected disabled>--Select--</mat-option>
+                    <mat-option value="Location 1">Location 1</mat-option>
+                    <mat-option value="Location 2">Location 2</mat-option>
+                    <mat-option value="Location 2">Location 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+        </div>
+        <div class="formDiv2">
+            <div class="checkboxDiv">
+                <mat-checkbox color="primary" labelPosition = 'before' formControlName = 'revision'>Revision</mat-checkbox>
+            </div>
+            <br>
+            <mat-form-field>
+                <mat-label>Verified By</mat-label>
+                <mat-select formControlName = 'verifiedBy' placeholder="Verified By">
+                    <mat-option value="" selected disabled>--Select--</mat-option>
+                    <mat-option value="verifiedBy 1">verifiedBy 1</mat-option>
+                    <mat-option value="verifiedBy 2">verifiedBy 2</mat-option>
+                    <mat-option value="verifiedBy 2">verifiedBy 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Next Review Date</mat-label>
+                <input matInput [matDatepicker]="picker1" formControlName = 'nextReviewDate'>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Expiration Date</mat-label>
+                <input matInput [matDatepicker]="picker2" formControlName = 'expirationDate'>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Employee</mat-label>
+                <mat-select formControlName = 'employee' placeholder="Employee">
+                    <mat-option value="" selected disabled>--Select--</mat-option>
+                    <mat-option value="Employee 1">Employee 1</mat-option>
+                    <mat-option value="Employee 2">Employee 2</mat-option>
+                    <mat-option value="Employee 2">Employee 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Revision Date</mat-label>
+                <input matInput [matDatepicker]="picker3" formControlName = 'revisionDate'>
+                <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                <mat-datepicker #picker3></mat-datepicker>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Status</mat-label>
+                <mat-select formControlName = 'status' placeholder="Status">
+                    <mat-option value="" selected disabled>--Select--</mat-option>
+                    <mat-option value="active">Active</mat-option>
+                    <mat-option value="disabled">Disabled</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <div class="checkboxDiv">
+                <mat-checkbox color="primary" labelPosition = 'before' formControlName = 'expired'>Expired</mat-checkbox>
+            </div>
+            <br>
+        </div>
+    </form>
+        
+</div>
