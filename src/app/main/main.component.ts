@@ -107,6 +107,5 @@ export class MainComponent implements OnInit {
     } else {
       this.skillSel.options.forEach( (item : MatOption) => {item.deselect()});
     }
-    this.skillSel.close();
   }
 }
