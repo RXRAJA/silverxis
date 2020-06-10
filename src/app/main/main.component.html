@@ -32,6 +32,7 @@
                       (+{{actionAttributes.value.length - 1}} {{actionAttributes.value?.length === 2 ? 'other' : 'others'}})
                     </span>
                   </mat-select-trigger>
+                  <mat-option #allSelected (click)="toggleAllSelection()" [value]="">Select All</mat-option>
                   <mat-option *ngFor="let actionAttribute of actionAttributesArr" [value]="actionAttribute">{{actionAttribute}}</mat-option>
                 </mat-select>
             </mat-form-field>

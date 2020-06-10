@@ -9,26 +9,31 @@
                 <input matInput [matDatepicker]="picker" formControlName = 'entryDate'>
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="hasError('entryDate', 'required') && isSubmitted">Entry Date is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field >
                 <mat-label>Action</mat-label>
                 <input matInput formControlName = 'action' placeholder="Action Name">
-                </mat-form-field>
-                <br>
+                <mat-error *ngIf="publicationsForm.controls['action'].errors?.required && isSubmitted">Action is required</mat-error>
+            </mat-form-field>
+            <br>
             <mat-form-field >
                 <mat-label>Publication ID</mat-label>
                 <input matInput formControlName = 'publicationId' placeholder="Publication ID">
+                <mat-error *ngIf="(hasError('publicationId', 'required') && isSubmitted)">Publication ID is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
                 <mat-label>Publication Description</mat-label>
                 <textarea matInput formControlName = 'publicationDescription' placeholder="Publication Description"></textarea>
+                <mat-error *ngIf="(hasError('publicationDescription', 'required') && isSubmitted)">Publication Description is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field >
                 <mat-label>Publication Type</mat-label>
                 <input matInput formControlName = 'publicationType' placeholder="Publication Type">
+                <mat-error *ngIf="(hasError('publicationType', 'required') && isSubmitted)">Publication Type is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -39,6 +44,7 @@
                     <mat-option value="Author 2">Author 2</mat-option>
                     <mat-option value="Author 3">Author 3</mat-option>
                 </mat-select>
+                <mat-error *ngIf="(hasError('author', 'required') && isSubmitted)">Author is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -49,6 +55,7 @@
                     <mat-option value="Published By 2">Published By 2</mat-option>
                     <mat-option value="Published By 3">Published By 3</mat-option>
                 </mat-select>
+                <mat-error *ngIf="(hasError('publishedBy', 'required') && isSubmitted)">Published By is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -59,6 +66,7 @@
                     <mat-option value="Aircraft Manufacturer 2">Aircraft Manufacturer 2</mat-option>
                     <mat-option value="Aircraft Manufacturer 3">Aircraft Manufacturer 3</mat-option>
                 </mat-select>
+                <mat-error *ngIf="(hasError('aircraftManufacturer', 'required') && isSubmitted)">Aircraft Manufacturer is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -69,6 +77,7 @@
                     <mat-option value="Model 2">Model 2</mat-option>
                     <mat-option value="Model 2">Model 3</mat-option>
                 </mat-select>
+                <mat-error *ngIf="(hasError('model', 'required') && isSubmitted)">Model is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -79,6 +88,7 @@
                     <mat-option value="ATA-Chapter 2">ATA-Chapter 2</mat-option>
                     <mat-option value="ATA-Chapter 2">ATA-Chapter 3</mat-option>
                 </mat-select>
+                <mat-error *ngIf="(hasError('ataChapter', 'required') && isSubmitted)">ATA-Chapter is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -89,6 +99,7 @@
                     <mat-option value="ATA-Sub Chapter 2">ATA-Sub Chapter 2</mat-option>
                     <mat-option value="ATA-Sub Chapter 2">ATA-Sub Chapter 3</mat-option>
                 </mat-select>
+                <mat-error *ngIf="(hasError('ataSubChapter', 'required') && isSubmitted)">ATA-Sub Chapter is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -99,6 +110,7 @@
                     <mat-option value="ATA-Position 2">ATA-Position 2</mat-option>
                     <mat-option value="ATA-Position 2">ATA-Position 3</mat-option>
                 </mat-select>
+                <mat-error *ngIf="(hasError('ataPosition', 'required') && isSubmitted)">ATA-Position/Zone is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -109,6 +121,7 @@
                     <mat-option value="Location 2">Location 2</mat-option>
                     <mat-option value="Location 2">Location 3</mat-option>
                 </mat-select>
+                <mat-error *ngIf="(hasError('location', 'required') && isSubmitted)">Location is required</mat-error>
             </mat-form-field>
             <br>
         </div>
@@ -125,6 +138,7 @@
                     <mat-option value="verifiedBy 2">verifiedBy 2</mat-option>
                     <mat-option value="verifiedBy 2">verifiedBy 3</mat-option>
                 </mat-select>
+                <mat-error *ngIf="(isSubmitted && publicationsForm.controls.verifiedBy.invalid) || (isSubmitted && publicationsForm.controls.verifiedBy.untouched) ">Verified By is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -132,6 +146,7 @@
                 <input matInput [matDatepicker]="picker1" formControlName = 'nextReviewDate'>
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
+                <mat-error *ngIf="(hasError('nextReviewDate', 'required') && isSubmitted)">Next Review Date is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -139,6 +154,7 @@
                 <input matInput [matDatepicker]="picker2" formControlName = 'expirationDate'>
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2></mat-datepicker>
+                <mat-error *ngIf="(hasError('expirationDate', 'required') && isSubmitted)">Expiration Date is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -149,6 +165,7 @@
                     <mat-option value="Employee 2">Employee 2</mat-option>
                     <mat-option value="Employee 2">Employee 3</mat-option>
                 </mat-select>
+                <mat-error *ngIf="(hasError('employee', 'required') && isSubmitted)">Employee is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -156,6 +173,7 @@
                 <input matInput [matDatepicker]="picker3" formControlName = 'revisionDate'>
                 <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
                 <mat-datepicker #picker3></mat-datepicker>
+                <mat-error *ngIf="(hasError('revisionDate', 'required') && isSubmitted)">Revision Date is required</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -165,6 +183,7 @@
                     <mat-option value="active">Active</mat-option>
                     <mat-option value="disabled">Disabled</mat-option>
                 </mat-select>
+                <mat-error *ngIf="(hasError('status', 'required') && isSubmitted)">Status is required</mat-error>
             </mat-form-field>
             <br>
             <div class="checkboxDiv">

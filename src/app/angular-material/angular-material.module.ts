@@ -10,6 +10,7 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import { MatIconModule } from "@angular/material/icon";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 
 
@@ -30,6 +31,7 @@ import { MatIconModule } from "@angular/material/icon";
     MatNativeDateModule, 
     MatRippleModule,
     MatIconModule,
+    MatSnackBarModule,
   ]
 })
 export class AngularMaterialModule { }
