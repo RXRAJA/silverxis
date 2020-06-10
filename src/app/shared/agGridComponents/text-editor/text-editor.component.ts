@@ -3,7 +3,7 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-text-editor',
   template: `<mat-form-field class="example-full-width">
-    <mat-label>{{params.headerName}}</mat-label>
+    <!-- <mat-label>{{params.headerName}}</mat-label> -->
     <input matInput #i [value]="params.value">
   </mat-form-field>`,
   styles: [

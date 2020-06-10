@@ -1,10 +1,5 @@
-<!-- <select #i [value]="params.value" class='cellInputs'>
-    <option value="">--Select--</option>
-    <option *ngFor='let x of params.values' value='{{x}}'>{{x}}</option>
-</select>
-<mat-form-field> -->
 <mat-form-field>
-    <mat-label>{{params.headerName}}</mat-label>
+    <!-- <mat-label>{{params.headerName}}</mat-label> -->
     <mat-select #i [value]="params.value" (blur)='getValue()'>
       <mat-option *ngFor="let x of params.values" value={{x}}>
         {{x}}

@@ -3,7 +3,7 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-text-area-editor',
   template: `<mat-form-field class="example-full-width">
-  <mat-label>{{params.headerName}}</mat-label>
+  <!-- <mat-label>{{params.headerName}}</mat-label> -->
   <textarea matInput  rows='1' #i [value]="params.value"></textarea>
   </mat-form-field> `,
   styles: [

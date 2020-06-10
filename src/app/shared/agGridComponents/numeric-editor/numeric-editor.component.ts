@@ -3,7 +3,7 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-numeric-editor',
   template: `<mat-form-field class="example-full-width">
-    <mat-label>{{params.headerName}}</mat-label>
+    <!-- <mat-label>{{params.headerName}}</mat-label>-->
     <input matInput #i [value]="params.value" (keypress)="onKeyPress($event)" (keydown)="onKeyDown($event)">
   </mat-form-field>`,
 })
