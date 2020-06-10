@@ -91,6 +91,8 @@
                 <mat-error *ngIf="(hasError('ataChapter', 'required') && isSubmitted)">ATA-Chapter is required</mat-error>
             </mat-form-field>
             <br>
+        </div>
+        <div class="formDiv2">
             <mat-form-field>
                 <mat-label>ATA-Sub Chapter</mat-label>
                 <mat-select formControlName = 'ataSubChapter' placeholder="ATA-Sub Chapter">
@@ -124,8 +126,6 @@
                 <mat-error *ngIf="(hasError('location', 'required') && isSubmitted)">Location is required</mat-error>
             </mat-form-field>
             <br>
-        </div>
-        <div class="formDiv2">
             <div class="checkboxDiv">
                 <mat-checkbox color="primary" labelPosition = 'before' formControlName = 'revision'>Revision</mat-checkbox>
             </div>

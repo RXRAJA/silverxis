@@ -1,5 +1,5 @@
 .tab-container{
-    margin-left: 3rem;
+    margin: 0 3rem;
 }
 
 ::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active{
@@ -16,7 +16,7 @@
 
 .save_btn{
     float: right;
-    margin-right: 4%;
+    margin: .75% 0;
 }
 
 .mainHeading{
