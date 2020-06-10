@@ -14,4 +14,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
  - Double-click grid cell to edit the cell value.
  - Tab can be used to navigate to the next cell easily, for navigating to previous cell shift+tab can be used
- - Label has been added to inline grid cell while editing the data in cell for the convenience of user, so that unnecessary shifting of eye to view coloumn header can be avoided - This feature can be activated by uncommenting all <mat-label> inside shared/agGridComponents.
+ - Label has been added to inline grid cell while editing the data in cell for the convenience of user, so that unnecessary shifting of eye to view coloumn header can be avoided - This feature can be activated by uncommenting all "mat-label" inside shared/agGridComponents.
